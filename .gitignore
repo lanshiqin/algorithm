@@ -29,3 +29,5 @@ hs_err_pid*
 build
 
 .idea/
+/app/src/test/java/com/lanshiqin/playground/
+/app/src/main/java/com/lanshiqin/playground/

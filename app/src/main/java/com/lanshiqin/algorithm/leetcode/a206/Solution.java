@@ -45,4 +45,19 @@ public class Solution {
         }
         return prev;
     }
+
+    public ListNode reverseListTwo(ListNode head){
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode g = dummy;
+        ListNode p = head;
+        while(p!=null&&p.next!=null){
+            ListNode remove = p.next;
+            p.next = p.next.next;
+
+            remove.next = g.next;
+            g.next = remove;
+        }
+        return dummy.next;
+    }
 }

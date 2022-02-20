@@ -35,26 +35,24 @@ import com.lanshiqin.algorithm.leetcode.ListNode;
 public class Solution {
 
     public ListNode reverseBetween(ListNode head, int left, int right) {
-        ListNode dummy = new ListNode(0);
+        if (head == null || head.next == null || left == right) return head;
+        ListNode dummy = new ListNode();
         dummy.next = head;
-        ListNode prev = dummy;
-        ListNode curr = head;
-        int index = 1;
-        while (index < left && curr != null) {
-            prev = prev.next;
-            curr = curr.next;
-            index++;
+        ListNode g = dummy;
+        ListNode p = head;
+        int n = left -1;
+        while(n-->0){
+            g = g.next;
+            p = p.next;
         }
-        ListNode tail = curr;
-        while (curr != null && index <= right) {
-            ListNode next = curr.next;
-            curr.next = prev.next;
-            prev.next = curr;
-            tail.next = next;
-            curr = next;
-            index++;
+        for (int i = 0; i < right - left; i++) {
+            ListNode remove = p.next;
+            p.next = p.next.next;
+
+            remove.next  = g.next;
+            g.next = remove;
+
         }
         return dummy.next;
-
     }
 }

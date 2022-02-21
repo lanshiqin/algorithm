@@ -47,10 +47,9 @@ import java.util.Map;
  */
 public class LRUCache {
 
-    private final Map<Integer, Node> map;
-    private final DoubleLinked cache;
-
-    private final int capacity;
+    private Map<Integer, Node> map;
+    private DoubleLinked cache;
+    private int capacity;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
@@ -60,26 +59,53 @@ public class LRUCache {
 
     public int get(int key) {
         Node node = map.get(key);
-        if (node != null) {
-            put(key, node.val);
-            return node.val;
-        }
-        return -1;
+        if (node == null) return -1;
+        put(key, node.val);
+        return node.val;
     }
 
     public void put(int key, int value) {
-        Node node = new Node(key, value);
-        Node x = map.get(key);
-        if (x != null) {
-            cache.remove(x);
-            cache.addFirst(x);
-            map.put(key, x);
-        } else if (cache.size() >= capacity) {
-            Node removeNode = cache.removeLast();
-            map.remove(removeNode.key);
+        Node newNode = new Node(key, value);
+        if (map.containsKey(key)) {
+            cache.remove(map.get(key));
+            map.remove(key);
+        } else {
+            if (map.size() == capacity) {
+                int deleteKey = cache.removeLast();
+                map.remove(deleteKey);
+            }
         }
-        cache.addFirst(node);
-        map.put(key, node);
+        cache.addFirst(newNode);
+        map.put(key, newNode);
+    }
+
+    class DoubleLinked {
+        Node head, tail;
+
+        public DoubleLinked() {
+            head = new Node(0, 0);
+            tail = new Node(0, 0);
+            head.next = tail;
+            tail.prev = head;
+        }
+
+        public void addFirst(Node node) {
+            node.next = head.next;
+            head.next.prev = node;
+            head.next = node;
+            node.prev = head;
+        }
+
+        public int remove(Node node) {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+            return node.val;
+        }
+
+        public int removeLast() {
+            if (head.next == tail) return -1;
+            return remove(tail.prev);
+        }
     }
 
     class Node {
@@ -89,50 +115,6 @@ public class LRUCache {
         public Node(int key, int val) {
             this.key = key;
             this.val = val;
-        }
-    }
-
-    class DoubleLinked {
-        private Node head, tail;
-        private int size;
-
-        public void addFirst(Node node) {
-            if (head == null) {
-                head = tail = node;
-            } else {
-                Node n = head;
-                n.prev = node;
-                node.next = n;
-                head = node;
-            }
-            size++;
-        }
-
-        public void remove(Node node) {
-            if (node == head && node == tail) {
-                head = null;
-                tail = null;
-            } else if (node == tail) {
-                node.prev.next = null;
-                tail = node.prev;
-            } else if (node == head) {
-                node.next.prev = null;
-                head = node.next;
-            } else {
-                node.prev.next = node.next;
-                node.next.prev = node.prev;
-            }
-            size--;
-        }
-
-        public Node removeLast() {
-            Node node = tail;
-            remove(tail);
-            return node;
-        }
-
-        public int size() {
-            return size;
         }
     }
 }

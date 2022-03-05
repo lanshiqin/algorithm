@@ -15,10 +15,10 @@ class BubbleSortTest {
 
     @Test
     void bubbleSort() {
-        int[] nums = {3,2,1,5,6,4};
+        int[] nums = {3, 2, 1, 5, 6, 4};
         new BubbleSort().bubbleSort(nums);
         for (int i = 0; i < nums.length; i++) {
-            assertEquals(i+1, nums[i]);
+            assertEquals(i + 1, nums[i]);
         }
     }
 }

@@ -17,6 +17,6 @@ class SolutionTest {
         TreeNode root = new TreeNode(2);
         root.left = new TreeNode(1);
         root.right = new TreeNode(3);
-        assertEquals(6,new Solution().maxPathSum(root));
+        assertEquals(6, new Solution().maxPathSum(root));
     }
 }

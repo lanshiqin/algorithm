@@ -35,16 +35,17 @@ import com.lanshiqin.algorithm.leetcode.TreeNode;
  */
 public class Solution {
     int max = Integer.MIN_VALUE;
+
     public int maxPathSum(TreeNode root) {
         getMax(root);
         return max;
     }
 
-    public int getMax(TreeNode root){
-        if (root==null) return 0;
-        int leftMax = Math.max(0,getMax(root.left));
-        int rightMax = Math.max(0,getMax(root.right));
-        max = Math.max(max, root.val+leftMax + rightMax);
+    public int getMax(TreeNode root) {
+        if (root == null) return 0;
+        int leftMax = Math.max(0, getMax(root.left));
+        int rightMax = Math.max(0, getMax(root.right));
+        max = Math.max(max, root.val + leftMax + rightMax);
         return Math.max(leftMax, rightMax) + root.val;
     }
 }

@@ -55,7 +55,6 @@ public class Solution {
             while (s2 < l2 && version2.charAt(s2) != '.') {
                 num2 = num2 * 10 + version2.charAt(s2++) - '0';
             }
-            System.out.println("num1:" + num1 + " num2:" + num2);
             if (num1 != num2) {
                 return num1 > num2 ? 1 : -1;
             }

@@ -39,9 +39,10 @@ public class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         if (nums == null || nums.length < 3) return new ArrayList<>();
         Set<List<Integer>> result = new HashSet<>();
+        Arrays.sort(nums);
         int n = nums.length;
         for (int i = 0; i < n; i++) {
-            int target = -nums[i];
+            int target = nums[i];
             int left = i + 1;
             int right = n - 1;
             while (left < right) {

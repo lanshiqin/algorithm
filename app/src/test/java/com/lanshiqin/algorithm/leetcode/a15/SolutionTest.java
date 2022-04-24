@@ -16,8 +16,8 @@ class SolutionTest {
     @Test
     void threeSum() {
         List<List<Integer>> lists = new Solution().threeSum(new int[]{-1, 0, 1, 2, -1, -4});
-        int[] expectedArray1 = {-1, 0, 1};
-        int[] expectedArray2 = {-1, -1, 2};
+        int[] expectedArray1 = {-1, -1, 2};
+        int[] expectedArray2 = {-1, 0, 1};
         for (int i = 0; i < lists.get(0).size(); i++) {
             assertEquals(expectedArray1[i], lists.get(0).get(i));
         }

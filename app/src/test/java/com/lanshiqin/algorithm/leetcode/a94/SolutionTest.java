@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SolutionTest {
 
@@ -19,11 +19,11 @@ class SolutionTest {
         TreeNode root = new TreeNode(1);
         TreeNode node1 = new TreeNode(2);
         root.right = node1;
-        TreeNode node2 = new TreeNode(3);
-        node1.left = node2;
+        node1.left = new TreeNode(3);
+        int[] expectedArray = {1, 3, 2};
         List<Integer> nodeList = new Solution().inorderTraversal(root);
-        for (Integer node : nodeList) {
-            System.out.println(node);
+        for (int i = 0; i < expectedArray.length; i++) {
+            assertEquals(expectedArray[i], nodeList.get(i));
         }
     }
 
@@ -32,11 +32,11 @@ class SolutionTest {
         TreeNode root = new TreeNode(1);
         TreeNode node1 = new TreeNode(2);
         root.right = node1;
-        TreeNode node2 = new TreeNode(3);
-        node1.left = node2;
+        node1.left = new TreeNode(3);
+        int[] expectedArray = {1, 3, 2};
         List<Integer> nodeList = new Solution().inorderTraversal2(root);
-        for (Integer node : nodeList) {
-            System.out.println(node);
+        for (int i = 0; i < expectedArray.length; i++) {
+            assertEquals(expectedArray[i], nodeList.get(i));
         }
     }
 }

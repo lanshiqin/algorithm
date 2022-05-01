@@ -16,21 +16,24 @@ import java.util.Stack;
  * <p>
  * 输入：root = [1,null,2,3]
  * 输出：[1,3,2]
+ * <p>
  * 示例 2：
  * <p>
  * 输入：root = []
  * 输出：[]
+ * <p>
  * 示例 3：
  * <p>
  * 输入：root = [1]
  * 输出：[1]
+ * <p>
  * 示例 4：
  * <p>
  * <p>
  * 输入：root = [1,2]
  * 输出：[2,1]
- * 示例 5：
  * <p>
+ * 示例 5：
  * <p>
  * 输入：root = [1,null,2]
  * 输出：[1,2]
@@ -43,7 +46,7 @@ import java.util.Stack;
  * 进阶:递归算法很简单，你可以通过迭代算法完成吗？
  * <p>
  * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/binary-tree-inorder-traversal
+ * 链接：<a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal">https://leetcode-cn.com/problems/binary-tree-inorder-traversal</a>
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution {

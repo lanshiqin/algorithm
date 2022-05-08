@@ -24,3 +24,4 @@ LeetCode算法题
 [424. 替换后的最长重复字符](app/src/main/java/com/lanshiqin/algorithm/leetcode/a424/Solution.java)
 [485. 最大连续 1 的个数](app/src/main/java/com/lanshiqin/algorithm/leetcode/a485/Solution.java)
 [1004. 最大连续1的个数 III](app/src/main/java/com/lanshiqin/algorithm/leetcode/a1004/Solution.java)
+[1493. 删掉一个元素以后全为 1 的最长子数组](app/src/main/java/com/lanshiqin/algorithm/leetcode/a1493/Solution.java)

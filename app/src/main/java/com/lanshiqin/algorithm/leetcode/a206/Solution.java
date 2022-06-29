@@ -53,11 +53,18 @@ public class Solution {
         ListNode p = head;
         while(p!=null&&p.next!=null){
             ListNode remove = p.next;
-            p.next = p.next.next;
-
+            p.next = remove.next;
             remove.next = g.next;
             g.next = remove;
         }
         return dummy.next;
+    }
+
+    public ListNode reverseListTree(ListNode head){
+        if (head==null||head.next==null) return head;
+        ListNode last = reverseListTree(head.next);
+        head.next.next = head;
+        head.next = null;
+        return last;
     }
 }

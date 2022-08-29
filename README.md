@@ -42,4 +42,12 @@ LeetCode算法题
 
 [206. 反转链表](app/src/main/java/com/lanshiqin/algorithm/leetcode/a206/Solution.java)
 
+[141. 环形链表](app/src/main/java/com/lanshiqin/algorithm/leetcode/a141/Solution.java)
+
+[21. 合并两个有序链表](app/src/main/java/com/lanshiqin/algorithm/leetcode/a21/Solution.java)
+
+[19. 删除链表的倒数第n个结点](app/src/main/java/com/lanshiqin/algorithm/leetcode/a19/Solution.java)
+
+[876. 链表的中间结点](app/src/main/java/com/lanshiqin/algorithm/leetcode/a876/Solution.java)
+
 [92. 反转链表 II](app/src/main/java/com/lanshiqin/algorithm/leetcode/a92/Solution.java)

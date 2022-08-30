@@ -51,3 +51,7 @@ LeetCode算法题
 [876. 链表的中间结点](app/src/main/java/com/lanshiqin/algorithm/leetcode/a876/Solution.java)
 
 [92. 反转链表 II](app/src/main/java/com/lanshiqin/algorithm/leetcode/a92/Solution.java)
+
+## 栈
+
+[20. 有效的括号](app/src/main/java/com/lanshiqin/algorithm/leetcode/a20/Solution.java)

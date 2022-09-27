@@ -8,11 +8,11 @@ LeetCode算法题
 
 [插入排序](app/src/main/java/com/lanshiqin/algorithm/sort/InsertSort.java)
 
+[选择排序](app/src/main/java/com/lanshiqin/algorithm/sort/SelectionSort.java)
+
 [归并排序](app/src/main/java/com/lanshiqin/algorithm/sort/MergeSort.java)
 
 [快速排序](app/src/main/java/com/lanshiqin/algorithm/sort/QuickSort.java)
-
-[选择排序](app/src/main/java/com/lanshiqin/algorithm/sort/SelectionSort.java)
 
 ## 二分
 

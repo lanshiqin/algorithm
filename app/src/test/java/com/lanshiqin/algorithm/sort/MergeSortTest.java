@@ -13,10 +13,11 @@ class MergeSortTest {
 
     @Test
     void mergeSort() {
-        int[] nums = {3, 2, 1, 5, 6, 4};
+        int[] nums = {11, 8, 3, 9, 7, 1, 2, 5};
+        int[] expected = {1, 2, 3, 5, 7, 8, 9, 11};
         new MergeSort().mergeSort(nums);
         for (int i = 0; i < nums.length; i++) {
-            assertEquals(i + 1, nums[i]);
+            assertEquals(expected[i], nums[i]);
         }
     }
 }

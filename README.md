@@ -14,6 +14,8 @@ LeetCode算法题
 
 [快速排序](app/src/main/java/com/lanshiqin/algorithm/sort/QuickSort.java)
 
+[计数排序](app/src/main/java/com/lanshiqin/algorithm/sort/CountingSort.java)
+
 ## 二分
 
 ## 滑动窗口

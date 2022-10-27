@@ -20,6 +20,8 @@ LeetCode算法题
 
 ## 二分
 
+[35. 搜索插入位置](app/src/main/java/com/lanshiqin/algorithm/leetcode/a35/Solution.java)
+
 ## 滑动窗口
 
 [3. 无重复字符的最长子串](app/src/main/java/com/lanshiqin/algorithm/leetcode/a03/Solution.java)

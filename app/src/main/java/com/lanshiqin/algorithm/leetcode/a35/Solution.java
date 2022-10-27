@@ -40,26 +40,18 @@ package com.lanshiqin.algorithm.leetcode.a35;
 public class Solution {
 
     public int searchInsert(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
-        int index = 0;
+        int left = 0, right = nums.length - 1;
         while (left <= right) {
             int mid = (left + right) / 2;
-            index = mid;
             int value = nums[mid];
             if (value == target) {
                 return mid;
-            } else if (value < target) {
-                left = mid + 1;
-            } else {
+            } else if (value > target) {
                 right = mid - 1;
+            } else {
+                left = mid + 1;
             }
         }
-        if (right < 0) return 0;
-        if (right<left){
-            return left;
-        }
-        if (left >= nums.length) return nums.length;
-        return index + 1;
+        return left;
     }
 }

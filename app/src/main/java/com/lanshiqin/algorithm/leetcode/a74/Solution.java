@@ -35,36 +35,15 @@ package com.lanshiqin.algorithm.leetcode.a74;
 public class Solution {
 
     public boolean searchMatrix(int[][] matrix, int target) {
-        int left = 0;
-        int right = matrix.length - 1;
+        int row = 0;
         int col = matrix[0].length - 1;
-        while (left < right) {
-            int mid = (left + right) / 2;
-            int value = matrix[mid][col];
-            if (value == target) {
+        while (row < matrix.length && col >= 0) {
+            if (matrix[row][col] == target) {
                 return true;
-            } else if (value > target) {
-                if (matrix[mid][0] <= target) {
-                    left = mid;
-                    break;
-                }
-                right = mid - 1;
+            } else if (matrix[row][col] > target) {
+                col--;
             } else {
-                left = mid + 1;
-            }
-        }
-        int row = left;
-        left = 0;
-        right = matrix[0].length - 1;
-        while (left <= right) {
-            int mid = (left + right) / 2;
-            int value = matrix[row][mid];
-            if (value == target) {
-                return true;
-            } else if (value > target) {
-                right = mid - 1;
-            } else {
-                left = mid + 1;
+                row++;
             }
         }
         return false;

@@ -1,8 +1,5 @@
 package com.lanshiqin.algorithm.leetcode.a34;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 34. 在排序数组中查找元素的第一个和最后一个位置
  * <p>
@@ -43,46 +40,33 @@ import java.util.List;
 public class Solution {
 
     public int[] searchRange(int[] nums, int target) {
-        if (nums == null || nums.length == 0) return new int[]{-1, -1};
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == target) {
-                list.add(i);
-            }
-        }
-        if (list.isEmpty()) {
+        int n = nums.length;
+        if (n == 0) {
             return new int[]{-1, -1};
         }
-        return new int[]{list.get(0), list.get(list.size() - 1)};
-    }
-
-    public int[] searchRange2(int[] nums, int target) {
-        if (nums == null || nums.length == 0) return new int[]{-1, -1};
-        if (nums.length == 1) {
+        if (n == 1) {
             return nums[0] == target ? new int[]{0, 0} : new int[]{-1, -1};
         }
-        int n = nums.length - 1;
         int left = 0;
-        int right = n;
+        int right = n - 1;
         while (left <= right) {
             int mid = (left + right) / 2;
-            if (target > nums[mid]) {
+            if (nums[mid] < target) {
                 left = mid + 1;
-            } else if (target < nums[mid]) {
+            } else if (nums[mid] > target) {
                 right = mid - 1;
             } else {
-                int[] res = new int[2];
-                while (mid >= 0 && nums[mid] == target) {
-                    mid--;
+                int[] res = new int[]{mid, mid};
+                while (--mid >= 0 && nums[mid] == target) {
+                    res[0] = mid;
                 }
-                res[0] = ++mid;
-                while (mid <= n && nums[mid] == target) {
-                    mid++;
+                while (++mid < n && nums[mid] == target) {
+                    res[1] = mid;
                 }
-                res[1] = --mid;
                 return res;
             }
         }
         return new int[]{-1, -1};
     }
+
 }

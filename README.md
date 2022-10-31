@@ -20,6 +20,8 @@ LeetCode算法题
 
 ## 二分
 
+[34. 在排序数组中查找元素的第一个和最后一个位置](app/src/main/java/com/lanshiqin/algorithm/leetcode/a34/Solution.java)
+
 [35. 搜索插入位置](app/src/main/java/com/lanshiqin/algorithm/leetcode/a35/Solution.java)
 
 ## 滑动窗口
